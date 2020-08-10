@@ -1,0 +1,66 @@
+2)De una compra debes ingresar una cantidad indeterminada de productos,
+validando los siguientes datos:
+marca, precio, peso en kilogramos, tipo(sólido o líquido)
+a)informar el peso total de la compra.
+b)la marca del más caro de los líquidos
+c)la marca del más liviano de los sólidos
+*//*function mostrar()
+{
+	var marca;
+	var precio;
+	var kilogramos;
+	var tipo;
+	var respuesta;
+	var pesoTotal = 0;
+	var marcaMax;
+	var marcaMin;
+	var precioMax;
+	var peso;
+	do {
+		do {
+			marca=prompt("ingrese la marca (de origen chino)");
+		} while (!(isNaN(marca)));
+
+	do {
+		precio=prompt("ingrese el precio");
+		precio=parseInt(precio)
+	} while (isNaN(precio) || precio < 0);
+
+	do {
+        kilogramos=prompt("ingrese el peso (en kilogramos)")
+        kilogramos=parseInt(kilogramos);
+	} while (isNaN(kilogramos));
+
+	do {
+		tipo=prompt("ingrese el tipo  (solido,liquido)")
+	} while (tipo != "solido" && tipo != "liquido");
+
+	
+
+	if(precioMax < precio){
+		precioMax = precio;
+		marcaMax = marca;
+		
+	}
+	 if (kilogramos < pesoLiviano){
+		pesoLiviano = kilogramos;
+		marcaMin = marca;
+	}
+		respuesta=prompt("ingresar mas al carrito?");
+
+	} while (respuesta == "si");
+
+	pesoTotal=pesoTotal+kilogramos;
+	pesoTotal=parseInt(pesoTotal);
+
+	document.write("el peso total de la compra es " + pesoTotal + "<br>");
+
+	if (tipo == liquido);{
+		document.write("la marca mas cara de los liquidos es " + marcaMax + "<br>");
+	}
+
+	if( tipo == solido){ 
+		document.write("la marca del mas liviano de los solidos es " + marcaMin);
+	}
+  }
+  
