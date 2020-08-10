@@ -1,0 +1,73 @@
+1)De 5  personas que ingresan al hospital se deben tomar y
+validar los siguientes datos.
+nombre , temperatura, sexo y edad.
+a)informar la cantidad de personas de cada sexo.
+b)la edad promedio en total
+c)la mujer con más temperatura(si la hay)
+pedir datos por prompt y mostrar por document.write o console.log
+*/ /*
+function mostrar()
+{
+var nombre;
+var temperatura;
+var sexo;
+var edad;
+var contador = 0;
+var contadorMujer = 0;
+var contadorHombre = 0;
+var contadorEdad = 0;
+var contadorDePersonas = 0;
+var temperaturaMax = 0;
+var mujerMaxTemperatura;
+
+
+	do {
+	do {
+		nombre=prompt("ingrese el nombre");
+	} while (!(isNaN(nombre)));	
+	do {
+		temperatura=prompt("ingrese la temperatura");
+	} while (isNaN(temperatura) || temperatura <= 0);
+
+do {
+	sexo=prompt("ingrese el sexo f o m")
+} while (sexo != "m" && sexo != "f");
+
+do {
+	edad=prompt("ingrese la edad");
+	edad=parseInt(edad);
+} while (isNaN(edad));
+
+if(sexo == "f"){
+contadorMujer++;	
+} 
+if(sexo == "m"){
+contadorHombre++;
+}
+
+if(sexo == "m" || sexo == "f"){
+contadorDePersonas++;
+contadorEdad=contadorEdad+edad;
+}
+
+if(temperaturaMax < temperatura){
+temperaturaMax=temperatura;
+mujerMaxTemperatura = nombre;
+} 
+
+contador++;
+} while (contador < 5);
+
+edadFinalDePersonas=contadorEdad/contadorDePersonas;
+edadFinalDePersonas=parseInt(edadFinalDePersonas);
+
+document.write("la cantidad de mujeres es  " + contadorMujer + " y la cantidad de hombres es " + contadorHombre + "<br>" );
+
+document.write("la edad promedio es de " + edadFinalDePersonas + "<br>");
+
+if (sexo == "f"){
+	document.write("la mujer con mas temperatura es " + mujerMaxTemperatura);
+
+}
+
+}
